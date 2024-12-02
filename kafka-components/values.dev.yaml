@@ -1,0 +1,8 @@
+# kafka-components/values.dev.yaml
+kafka:
+  module: kafka
+  environment: dev
+  replicas: 3
+  zookeeper:
+    enabled: true
+    replicaCount: 3

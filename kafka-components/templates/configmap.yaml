@@ -1,0 +1,9 @@
+# kafka-components/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: {{ .Release.Namespace }}
+data:
+  server.properties: |
+    {{ .Files.Get "kafka-components/server.properties" | indent 4 }}
