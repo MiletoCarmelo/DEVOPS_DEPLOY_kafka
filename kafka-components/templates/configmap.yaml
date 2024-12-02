@@ -6,4 +6,4 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   server.properties: |
-    {{ .Files.Get .Values.kafka.server.file | indent 4 }}
+{{ .Files.Get .Values.kafka.server.file | indent 4 }}
