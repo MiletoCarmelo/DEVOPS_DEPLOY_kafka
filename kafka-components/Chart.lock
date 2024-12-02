@@ -1,6 +1,0 @@
-dependencies:
-- name: generic-kafka-backend
-  repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
-  version: 0.1.0
-digest: sha256:d532616e1eba8785283327e5eac3789782bded8c2e7d030dbd0d9b83f9f60428
-generated: "2024-12-02T16:15:50.842867563+01:00"
