@@ -6,3 +6,5 @@ kafka:
   zookeeper:
     enabled: true
     replicaCount: 3
+  server: 
+    file: "server.properties"
