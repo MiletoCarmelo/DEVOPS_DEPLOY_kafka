@@ -10,3 +10,7 @@ dependencies:
     version: 0.1.7
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: kafka
+  - name: generic-kafka-client-consumer
+    version: 0.1.0
+    repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
+    alias: kafka-consumer
