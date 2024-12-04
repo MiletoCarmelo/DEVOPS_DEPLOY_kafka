@@ -18,3 +18,7 @@ dependencies:
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: kafka-monitoring
+  - name: kube-prometheus-stack
+    version: 55.5.0
+    repository: https://prometheus-community.github.io/helm-charts
+    alias: prometheus
