@@ -17,14 +17,3 @@ kafka-monitoring:
     interval: 30s
   prometheusRules:
     enabled: true
-
-prometheus:
-  enabled: true
-  prometheus:
-    prometheusSpec:
-      podMonitorSelectorNilUsesHelmValues: false
-      serviceMonitorSelectorNilUsesHelmValues: false
-  alertmanager:
-    enabled: true
-  grafana:
-    enabled: true
