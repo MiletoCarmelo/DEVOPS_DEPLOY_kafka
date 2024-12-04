@@ -3,7 +3,7 @@ apiVersion: v2
 name: kafka
 description: A Helm chart for kafka backend
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: "1.1.0"
 dependencies:
   - name: generic-kafka-backend
@@ -14,3 +14,7 @@ dependencies:
     version: 0.1.1
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: kafka-consumer
+  - name: generic-kafka-monitoring
+    version: 0.1.1
+    repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
+    alias: kafka-monitoring
