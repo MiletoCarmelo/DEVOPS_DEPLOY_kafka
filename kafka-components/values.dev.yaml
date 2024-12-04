@@ -6,3 +6,14 @@ kafka:
   zookeeper:
     enabled: true
     replicaCount: 3
+
+kafka-consumer:
+  kafkaBootstrapServers: "kafka-dev-service.kafka-dev.svc.cluster.local:9092"
+
+kafka-monitoring:
+  serviceMonitor:
+    enabled: true
+    namespace: kafka-dev
+    interval: 30s
+  prometheusRules:
+    enabled: true
