@@ -11,7 +11,7 @@ kafka:
   # Configuration des partitions et réplicas pour le topic
   # Liste des topics à créer côté Kafka backend
   topics:
-    - name: "price-data"
+    - name: "finance-price-stream"
       partitions: 3
       replicationFactor: 1  # Assurez-vous que ce nombre est inférieur ou égal au nombre de réplicas Kafka
     - name: "order-data"
