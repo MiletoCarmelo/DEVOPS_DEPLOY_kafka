@@ -1,4 +1,5 @@
 # kafka-components/values.dev.yaml
+
 kafka:
   module: kafka
   environment: dev
@@ -6,6 +7,12 @@ kafka:
   zookeeper:
     enabled: true
     replicaCount: 1
+
+  # Configuration des partitions et réplicas pour le topic
+  topics:
+    - name: "price-data"
+      partitions: 3
+      replicationFactor: 1  # Assurez-vous que ce nombre est inférieur ou égal au nombre de réplicas Kafka
 
 kafka-consumer:
   kafkaBootstrapServers: "kafka-dev-service.kafka-dev.svc.cluster.local:9092"
@@ -17,3 +24,11 @@ kafka-monitoring:
     interval: 30s
   prometheusRules:
     enabled: true
+
+# Configurations supplémentaires pour Zookeeper et Kafka
+zookeeper:
+  enabled: true
+  replicaCount: 1
+  persistence:
+    enabled: true
+    size: 5Gi

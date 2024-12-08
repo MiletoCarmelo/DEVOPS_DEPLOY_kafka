@@ -1,0 +1,64 @@
+# kafka-components/values.prod.yaml
+kafka:
+  module: kafka
+  environment: production
+  replicas: 3  # Nombre de réplicas de Kafka
+  image:
+    repository: bitnami/kafka
+    tag: latest
+  zookeeper:
+    enabled: true
+    replicaCount: 3  # Nombre de réplicas de Zookeeper (important pour la haute disponibilité)
+  persistence:
+    enabled: true
+    size: 5Gi  # Taille des volumes persistants pour Kafka
+    storageClassName: local-path
+  resources:
+    requests:
+      memory: "2Gi"
+      cpu: "1000m"
+    limits:
+      memory: "4Gi"
+      cpu: "2000m"
+  ports:
+    containerPort: 9092  # Port d'écoute de Kafka
+    jmxPort: 9999
+
+  # Configuration des volumes persistants
+  volumes:
+    - name: kafka-data
+      persistentVolumeClaim:
+        claimName: kafka-data
+    - name: kafka-config
+      configMap:
+        name: kafka-config
+
+  volumeMounts:
+    - name: kafka-data
+      mountPath: /bitnami/kafka/data
+    - name: kafka-config
+      mountPath: /opt/bitnami/kafka/config/server.properties
+      subPath: server.properties
+
+  # Configuration de Kafka (fichier server.properties)
+  server:
+    file: "server.properties"
+
+kafka-consumer:
+  kafkaBootstrapServers: "kafka-dev-service.kafka-dev.svc.cluster.local:9092"
+  # Autres paramètres liés au consommateur Kafka
+
+kafka-monitoring:
+  serviceMonitor:
+    enabled: true
+    namespace: kafka-dev
+    interval: 30s
+  prometheusRules:
+    enabled: true
+
+# Configuration pour la mise à l'échelle automatique (si nécessaire)
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 80
