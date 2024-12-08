@@ -2,10 +2,10 @@
 kafka:
   module: kafka
   environment: dev
-  replicas: 3
+  replicas: 2
   zookeeper:
     enabled: true
-    replicaCount: 3
+    replicaCount: 2
 
 kafka-consumer:
   kafkaBootstrapServers: "kafka-dev-service.kafka-dev.svc.cluster.local:9092"
