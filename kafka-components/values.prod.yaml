@@ -24,6 +24,7 @@ kafka:
     containerPort: 9092  # Port d'écoute de Kafka
     jmxPort: 9999
 
+
   # Configuration des volumes persistants
   volumes:
     - name: kafka-data
