@@ -21,4 +21,4 @@ dependencies:
   - name: generic-strimzi-operator
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
-    alias: strimzi-operator
+    alias: generic-strimzi-operator
