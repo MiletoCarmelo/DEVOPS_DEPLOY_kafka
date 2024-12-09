@@ -31,12 +31,5 @@ kafka-monitoring:
 kafka-backend:  # <- Important: utiliser l'alias défini dans Chart.yaml
   module: kafka
   environment: dev
-  topics:
-    - name: "finance-price-stream"
-      partitions: 3
-      replicationFactor: 1
-    - name: "order-data"
-      partitions: 2
-      replicationFactor: 1
   server:
     file: "server.properties"
