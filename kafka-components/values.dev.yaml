@@ -14,6 +14,9 @@ kafka:  # pour le kafka-cluster
     - name: "order-data"
       partitions: 3
       replicationFactor: 1
+  
+  cluster:
+    name: kafka-dev
 
 kafka-consumer:
   # kafkaBootstrapServers: "kafka-dev-service.kafka-dev.svc.cluster.local:9092"
