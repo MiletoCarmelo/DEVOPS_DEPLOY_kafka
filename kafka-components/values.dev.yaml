@@ -16,7 +16,8 @@ kafka:  # pour le kafka-cluster
       replicationFactor: 1
 
 kafka-consumer:
-  kafkaBootstrapServers: "kafka-dev-service.kafka-dev.svc.cluster.local:9092"
+  # kafkaBootstrapServers: "kafka-dev-service.kafka-dev.svc.cluster.local:9092"
+  kafkaBootstrapServers: "kafka-dev-kafka-bootstrap.kafka-dev.svc.cluster.local:9092"
 
 kafka-monitoring:
   serviceMonitor:
