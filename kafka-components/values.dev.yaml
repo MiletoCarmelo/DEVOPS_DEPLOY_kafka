@@ -4,9 +4,6 @@ kafka:
   module: kafka
   environment: dev
   replicas: 1
-  zookeeper:
-    enabled: true
-    replicaCount: 1
 
   # Configuration des partitions et réplicas pour le topic
   # Liste des topics à créer côté Kafka backend
@@ -28,11 +25,3 @@ kafka-monitoring:
     interval: 30s
   prometheusRules:
     enabled: true
-
-# Configurations supplémentaires pour Zookeeper et Kafka
-zookeeper:
-  enabled: true
-  replicaCount: 1
-  persistence:
-    enabled: true
-    size: 5Gi

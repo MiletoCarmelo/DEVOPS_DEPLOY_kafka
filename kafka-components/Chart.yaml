@@ -3,14 +3,14 @@ apiVersion: v2
 name: kafka
 description: A Helm chart for kafka backend
 type: application
-version: 0.1.1
+version: 0.2.0  # Passez à une nouvelle version
 appVersion: "1.1.0"
 dependencies:
   - name: generic-strimzi-operator
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: strimzi-operator
-    
+
   - name: generic-kafka-cluster
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
@@ -18,7 +18,7 @@ dependencies:
     condition: strimzi-operator.enabled
 
   - name: generic-kafka-backend
-    version: 0.1.7
+    version: 0.2.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: kafka
     condition: kafka-cluster.enabled
