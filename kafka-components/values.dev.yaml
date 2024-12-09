@@ -9,7 +9,7 @@ kafka:  # pour le kafka-cluster
   # Liste des topics à créer côté Kafka backend
   topics:
     - name: "finance-price-stream"
-      partitions: 3
+      partitions: 1
       replicationFactor: 1  # Assurez-vous que ce nombre est inférieur ou égal au nombre de réplicas Kafka
     - name: "order-data"
       partitions: 2
