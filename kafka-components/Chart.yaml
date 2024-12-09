@@ -6,19 +6,23 @@ type: application
 version: 0.1.1
 appVersion: "1.1.0"
 dependencies:
-  - name: generic-kafka-backend
-    version: 0.1.7
+  - name: generic-strimzi-operator
+    version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
-    alias: kafka
-  - name: generic-kafka-client-consumer
-    version: 0.1.1
-    repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
-    alias: kafka-consumer
+    alias: strimzi-operator
   - name: generic-kafka-cluster
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: kafka-cluster
-  - name: generic-strimzi-operator
-    version: 0.1.0
+    condition: strimzi-operator.enabled
+  - name: generic-kafka-backend
+    version: 0.1.7
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
-    alias: generic-strimzi-operator
+    alias: kafka
+    condition: kafka-cluster.enabled
+  - name: generic-kafka-client-consumer
+    version: 0.1.1
+    repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
+    alias: kafka-consumer
+    condition: kafka.enabled
+
