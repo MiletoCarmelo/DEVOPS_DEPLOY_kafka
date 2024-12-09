@@ -5,9 +5,6 @@ kafka:  # pour le kafka-cluster
   environment: dev
   replicas: 1
 
-  cluster: 
-    name: kafka-dev  # Cette valeur doit correspondre au nom de votre cluster Kafka
-
   # Configuration des partitions et réplicas pour le topic
   # Liste des topics à créer côté Kafka backend
   topics:
