@@ -10,16 +10,19 @@ dependencies:
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: strimzi-operator
+    
   - name: generic-kafka-cluster
     version: 0.1.0
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: kafka-cluster
     condition: strimzi-operator.enabled
+
   - name: generic-kafka-backend
     version: 0.1.7
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
     alias: kafka
     condition: kafka-cluster.enabled
+
   - name: generic-kafka-client-consumer
     version: 0.1.1
     repository: https://raw.githubusercontent.com/MiletoCarmelo/DEVOPS_HELM_generic_kafka_backend/github-pages
